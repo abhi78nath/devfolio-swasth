@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diseases</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="http://fonts.cdnfonts.com/css/samarkan" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        *{
+          font-family: 'Poppins', sans-serif;
+        }
+        .navbar .navbar-brand{
+          margin-right: 2rem;
+        }
+        .container{
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            width: 27rem;
+            margin-top: 5rem;
+            padding: 2rem;
+        }
+        .container button{
+        background-color: white;
+        border: 0.01rem solid;
+        border-radius: 2rem;
+        width: 6rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        transition: 0.5s ease;
+        }
+        .container button:hover{
+            background-color: #2e4450;
+            color: white;
+        }
+        .field{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #2e4450;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/" style="font-family: 'Samarkan', sans-serif; color: white;">Swasth</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/" style="color: white;">HOME</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <h4>Calorie Calculator</h4>
+        <div class="calc-outer-wrap">
+            <div id="form-error" style="display:none;"></div>
+            <form class="calc-form" id="calc-form">
+              <div class="form-fields">
+            
+                <div class="field-outer">
+                  <label for="distance" class="top-label">Age:</label>
+                  <div class="field-items">
+                    <div class="field field-large">         
+                      <input type="text" name="age" id="age" inputmode="numeric" pattern="[0-9]*">
+                    </div><!--  /.field-large -->
+                    
+                    <div class="field field-medium">
+                      <select name="gender">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                               
+                      </select>
+                      
+                    </div><!--  /.field-small -->
+                  </div><!--  /.field-items -->
+                </div><!--  /.field-outer -->
+            
+                <div class="field-outer">
+                  <label for="height" class="top-label">Height:</label>
+                  <div class="field-items">
+                    <div class="field">
+                      <input type="text" name="height_ft" id="height-ft" inputmode="numeric" pattern="[0-9]*">
+                      <label for="height-ft">feet</label>
+                    </div><!--  /.field -->
+                   <div class="field">
+                      <input type="text" name="height_cm" id="height-cm" inputmode="numeric" pattern="[0-9]*">
+                      <label for="height-cm">or centimeters</label>
+                    </div><!--  /.field -->        
+                  </div><!--  /.field-items -->
+                </div><!--  /.field-outer -->
+            
+                <div class="field-outer">
+                  <label for="weight" class="top-label">Your weight:</label>
+                  <div class="field-items">
+                    <div class="field field-large">
+                      <input type="text" name="weight" id="weight" inputmode="numeric" pattern="[0-9]*">
+                    </div><!--  /.field-large -->
+                    <div class="field field-small">
+                      <select name="weight_unit">
+                        <option value="lb">lb</option>
+                        <option value="kg">kg</option>
+                      </select>
+                    </div><!--  /.field-small -->
+                  </div><!--  /.field-items -->
+                </div><!--  /.field-outer -->
+               <div class="btn-wrap field-outer">
+                <button class="form-submit">Calculate</button>
+              </div>
+              </div><!--  /.form fields -->
+            
+            
+            </form>
+            <div id="results" style="display:none;"></div>
+            </div><!--  /.calc-outer-wrap -->
+    </div>
+
+
+
+    <script>
+        (function() {
+    const form    = document.getElementById('calc-form');
+    const results = document.getElementById('results');
+    const errors  = document.getElementById('form-error');
+
+    /**
+     * Display a form validation error
+     *
+     * @param   {String}  msg  The validation message
+     * @return  {Boolen}       Returns false
+     */
+    function errorMessage(msg) {
+        errors.innerHTML = msg;
+        errors.style.display = '';
+        return false;
+    }
+
+    /**
+     * Display the calculation results
+     *
+     * @param   {Integer}  calories   The calories burned
+     * @param   {Integer}  distance   The distance run
+     * @param   {String}   unit       The distance unit (miles or kilometers)
+     * @param   {Integer}  burnRate   The calories per distance burn rate
+     * @param   {Integer}  calsPerHr  The calories burned per hour
+     */
+    function showResults(calories) {
+        results.innerHTML = `<p>Your basal metabolic rate (BMR) is: <strong>${(calories).toFixed(2)} </strong> calories a day.</p><a href="#" id="rs">revise</a>`;
+      results.style.display = ''
+      form.style.display = 'none'
+      errors.style.display = 'none'
+    }
+  
+    /**
+     * Hide the results and reset the form
+     */
+    function resetForm(e) {
+      if(e.target.id = 'rs') {
+        e.preventDefault();
+        results.style.display = 'none';
+        form.style.display = '';
+        form.reset()
+      }
+    }
+
+    /**
+     * Handle form submit
+     */
+    function submitHandler(e) {
+        e.preventDefault();
+
+        // Age
+        let age = parseFloat(form.age.value);
+        //let unit = form.distance_unit.value;
+        if(isNaN(age) || age < 0) {
+            return errorMessage('Please enter a valid age');
+        }
+   
+        // Height
+        let heightCM = parseFloat(form.height_cm.value);
+        if(isNaN(heightCM) || heightCM < 0) {
+            
+          let heightFeet = parseFloat(form.height_ft.value);
+          if(isNaN(heightFeet) || heightFeet < 0) {
+              return errorMessage('Please enter a valid Height in feet or centimeters');
+          }      
+         let heightInches = parseFloat(form.height_in.value);
+          if(isNaN(heightInches) || heightInches < 0) {
+              heightInches=0;
+          }   
+          heightCM = (2.54 * heightInches) + (30.4 * heightFeet)
+          
+        }   
+
+          let weight = parseFloat(form.weight.value);
+          if(isNaN(weight) || weight < 0) {
+              return errorMessage('Please enter a valid weight');
+          }   
+      
+        if(form.weight_unit.value == 'lb') {
+            weight = 0.453592 * weight;
+        }
+      
+       let calories = 0;
+       if(form.gender.value == 'Female') {
+          //females =  655.09 + 9.56 x (Weight in kg) + 1.84 x (Height in cm) - 4.67 x age   
+         calories = 655.09 + (9.56 * weight) + (1.84 * heightCM) - (4.67 * age);
+        }  else {
+         calories = 66.47 + (13.75 * weight) + (5 * heightCM) - (6.75 * age);
+        }
+ 
+        // Display results
+       showResults(calories);
+    }
+
+    // Add Event Listeners
+    form.addEventListener('submit', submitHandler);
+    results.addEventListener('click', resetForm, true);
+
+})();
+    </script>
+</body>
+</html>

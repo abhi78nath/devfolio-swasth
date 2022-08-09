@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +10,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <title>Swasth</title>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: #2e4450;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 1ex;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}
         *{
           font-family: 'Poppins', sans-serif;
         }
         body{
           background-color: #fafafa;
         }
-        .navbar{
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        .navbar .navbar-brand:hover{
+          transition: 0.3s ease;
+        }
+        .navbar .navbar-brand:hover{
+          color: #16c2d5;
+        }
+        .navbar .nav-item{
+          margin-right: 2rem;
+        }
+        .navbar .navbar-brand{
+          margin-right: 2rem;
         }
         .container{
             display: flex;
@@ -36,13 +61,9 @@
         .container .right{
             flex: 50%;
         }
-        #heroimg{
-            width: 30rem;
-            -webkit-box-shadow: -2px 13px 5px -3px rgba(0,0,0,0.4);
-            -moz-box-shadow: -2px 13px 5px -3px rgba(0,0,0,0.4);
-            box-shadow: -2px 13px 5px -3px rgba(0,0,0,0.4);
-        }
         .left button{
+        background-color: white;
+        border: 0.01rem solid;
         border-radius: 2rem;
         width: 6rem;
         padding: 0.5rem;
@@ -50,14 +71,27 @@
         transition: 0.5s ease;
         }
         .left button:hover{
-            background-color: black;
+            background-color: #2e4450;
+            color: white;
+        }
+        .section button{
+          background-color: white;
+          border: 0.01rem solid;
+          border-radius: 2rem;
+          width: 4rem;
+          padding: 0.25rem;
+          cursor: pointer;
+          transition: 0.5s ease;
+          color: black;
+        }
+        .section button:hover{
+            background-color: #2e4450;
             color: white;
         }
 
 
-
         .section{
-            
+            margin-top: 14rem;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -88,6 +122,7 @@
         .card{
             width: 18rem;
             min-width: 20rem;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
         }
         .card-header
         {
@@ -106,6 +141,10 @@
         .left button a{
             text-decoration: none;
             color:black;
+        }
+        .section .card:hover{
+          transition: 0.5s ease-out;
+          transform: translateY(-1rem);
         }
         @media screen and (max-width:768px) {
             .container{
@@ -129,78 +168,73 @@
             opacity: 0;
           }
         }
-        #heroimg{
+        #preloader{
+  background: #ededed url(./loader1.gif) no-repeat center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+#heroimg{
             width: 30rem;
             animation: float 3s ease-out infinite;
         }
         @keyframes float{
           50%{
-            transform: translateY(1rem);
+            transform: translateX(1rem);
           }
         }
-        #preloader{
-          background: #ededed url(./loader1.gif) no-repeat center;
-          height: 100vh;
-          width: 100%;
-          position: fixed;
-          z-index: 100;
-        }
-        /* #heroimg{
-          -webkit-box-shadow: -2px 13px 5px -3px rgba(0,0,0,0.4);
-          -moz-box-shadow: -2px 13px 5px -3px rgba(0,0,0,0.4);
-          box-shadow: -2px 13px 5px -3px rgba(0,0,0,0.4);
-        } */
       </style>
 </head>
 <body>
   <div id="preloader"></div>
     <div class="headbox">
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg" style="background-color: #2e4450;">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/" style="font-family: 'Samarkan', sans-serif;">Swasth</a>
+              <a class="navbar-brand" href="/" style="font-family: 'Samarkan', sans-serif; color: white;">Swasth</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">HOME</a>
+                    <a class="nav-link active" aria-current="page" href="/" style="color: white;">HOME</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">HEALTH CARE</a>
+                    <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">HEALTH CARE</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="/disease">DISEASES</a></li>
                       <li><a class="dropdown-item" href="/basic">BASIC HEALTH CARE</a></li>
                       </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/consult">CONSULT PHYSICIAN</a>
+                    <a class="nav-link active" aria-current="page" href="/consult" style="color: white;">CONSULT PHYSICIAN</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#contact">CONTACT US</a>
+                    <a class="nav-link active" aria-current="page" href="#contact" style="color: white;">CONTACT US</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/uploadform">MEDICINE</a>
+                    <a class="nav-link active" aria-current="page" href="/uploadform" style="color: white;">MEDICINE</a>
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
-                  <% if(!currentUser){ %>
+                  <% if(!currentUser){%>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                          <a class="nav-link active" aria-current="page" href="/login" style="color: white;">Login</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="/register">Sign Up</a>
+                          <a class="nav-link active" aria-current="page" href="/register" style="color: white;">Sign Up</a>
                         </li>
                       </ul>
-                  <% }else{ %>
+                  <%}else{%>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item nav-link active">Signed In As <%= currentUser.username %></li>
+                      <li class="nav-item nav-link active" style="color: white;">Signed In As <%=currentUser.username%></li>
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+                        <a class="nav-link active" aria-current="page" href="/logout" style="color: white;">Logout</a>
                       </li>
                     </ul>
-                    <% } %>
+                    <%}%>
                 </form>
               </div>
             </div>
@@ -217,8 +251,8 @@
           </div>
     </div>
     <div class="section" id="sec">
-      <div class="card text-black mb-3 shadow-lg  mb-5 bg-body rounded" style="max-width: 20rem;">
-          <div class="card-header">Diseases</div>
+      <div class="card text-black mb-3" style="max-width: 20rem;">
+          <div class="card-header">BMI Calculator</div>
           <div class="card-body">
               <img src="./diseases.jpg" alt="" id="img">
               <a href="/disease"><button type="button" class="btn btn-primary">Visit</button></a>
@@ -227,14 +261,14 @@
 
 
 
-      <div class="card text-black mb-3 shadow-lg  mb-5 bg-body rounded" style="max-width: 20rem;">
-          <div class="card-header">Basic Health Care</div>
+      <div class="card text-black mb-3" style="max-width: 20rem;">
+          <div class="card-header">Daily Calories Calculator</div>
           <div class="card-body">
               <img src="./basichealthcare.jpg" alt="" id="img">
-              <a href="/basic"><button type="button" class="btn btn-primary">Visit</button></a>
+              <a href="/calorie"><button type="button" class="btn btn-primary">Visit</button></a>
           </div>
       </div>
-      <div class="card text-black mb-3 shadow-lg  mb-5 bg-body rounded" style="max-width: 20rem;">
+      <div class="card text-black mb-3" style="max-width: 20rem;">
           <div class="card-header">Consult Physician</div>
           <div class="card-body">
               <img src="./consultphysician.jpg" alt="" id="img">
@@ -242,7 +276,7 @@
 
           </div>
       </div>
-      <div class="card text-black  mb-3 shadow-lg  mb-5 bg-body rounded" style="max-width: 20rem;">
+      <div class="card text-black  mb-3" style="max-width: 20rem;">
           <div class="card-header">Medicines</div>
           <div class="card-body">
               <img src="./medicines.jpg" alt="" id="img">
@@ -268,6 +302,287 @@
           loader.style.display = "none";
         })
       </script>
-      <%- include('./partials/footer'); -%>
-<!-- </body>
+      
+<style>
+  .footer-distributed{
+	background: #2e4450;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	margin-top: 10vh;
+	text-align: left;
+	padding: 50px 60px 40px;
+	bottom: 0px;
+	overflow: hidden;
+}
+
+
+
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	float: left;
+	background: #2e4450;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px;
+	margin: 0 0 10px;
+	background: #2e4450;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+	background: #2e4450;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+	background: #2e4450;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+	background: #2e4450;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+	background: #2e4450;
+}
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons{
+	margin-top: 40px;
+	background: #2e4450;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #2e4450;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	float: right;
+	background-color: #2e4450;
+}
+
+.footer-distributed .footer-right p{
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px 42px 0 0;
+	/* color: #ffffff; */
+	background-color:#2e4450;
+}
+
+/* The contact form */
+
+.footer-distributed form{
+	display: inline-block;
+	background-color: #2e4450;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea{
+	display: block;
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color:  #1f2022;
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+	border: none;
+	resize: none;
+
+	font: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	color:  #d1d2d2;
+
+	width: 400px;
+	padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+	color:  #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+	color:  #5c666b;
+	opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder{
+	color:  #5c666b;
+}
+
+
+.footer-distributed form input{
+	height: 55px;
+	margin-bottom: 15px;
+}
+
+.footer-distributed form textarea{
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.footer-distributed form button{
+  border: none;
+	padding: 0.5rem;
+  width: 6rem;
+	font-weight: bold;
+	float: right;
+  background-color: white;
+  border-radius: 0.5rem;
+  transition: 0.5s;
+}
+.footer-distributed form button:hover{
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+
+	.footer-distributed {
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-distributed form input,
+	.footer-distributed form textarea{
+		width: 250px;
+	}
+
+	.footer-distributed form button{
+		padding: 10px 35px;
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	.footer-distributed{
+		padding: 30px;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		float: none;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.footer-distributed .footer-left{
+		margin-bottom: 40px;
+	}
+
+	.footer-distributed form{
+		margin-top: 30px;
+	}
+
+	.footer-distributed form{
+		display: block;
+	}
+
+	.footer-distributed form button{
+		float: none;
+	}
+}
+
+</style>
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3 style="font-family: 'Samarkan', sans-serif;">Swasth</h3>
+
+      <p class="footer-links">
+        <a href="/">Home</a>
+        ·
+        <a href="/basic">Health Care</a>
+        ·
+        <a href="#">About</a>
+        ·
+        <a href="#">FAQ</a>
+        ·
+        <a href="#">Contact</a>
+      </p>
+
+      <p class="footer-company-name">Lo-fi Devs © 2022</p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p style="color: white">Contact Us</p>
+
+	  <form action="https://formsubmit.co/3b784510c1979c17959404e1a371327d" method="POST" id="contact">
+		<!-- Honeypot -->
+		<input type="text" name="_honey" style="display: none;">
+  
+		<!-- Disable Captcha -->
+		<input type="hidden" name="_captcha" value="false">
+
+        <input type="text" name="email" placeholder="Email">
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+
+      </form>
+
+    </div>
+
+  </footer>
+
+
+</div>
+</body>
+</html>
+
+
+</div>
+</body>
+</html><!-- </body>
 </html> -->
