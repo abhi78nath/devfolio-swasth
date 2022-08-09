@@ -38,13 +38,13 @@ app.use(function(req, res, next){
 
 app.use(upload());
 //--------database------------
-mongoose.connect("mongodb://localhost:27017/userDB",{useNewUrlParser:true});
+// mongoose.connect("mongodb://localhost:27017/userDB",{useNewUrlParser:true});
 
 
 ////atlas
-// const { MongoClient, ServerApiVersion } = require('mongodb');
-// mongoose.connect(process.env.MONGOMY,{useNewUrlParser:true});
-//
+const { MongoClient, ServerApiVersion } = require('mongodb');
+mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true});
+
 
 const consultSchema=new mongoose.Schema({
     name:String,
@@ -77,6 +77,9 @@ app.get("/basic",function(req,res){
 })
 app.get("/bmicalc", function(req,res){
     res.render("bmicalc")
+})
+app.get("/calorie", function(req,res){
+    res.render("calorie")
 })
 
 //====================
