@@ -1,0 +1,321 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+      *{
+        font-family: 'Poppins', sans-serif;
+      }
+      .headbox{
+          /* background: #fafafa; */
+          background-color: white;
+          background-image: url(./img/patterns\ \(1\).png);
+          /* background: yellowgreen; */
+
+      }
+      .navbar{
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .container{
+          display: flex;
+          margin-top: 7rem;
+          margin-bottom: 10rem;
+          overflow: hidden;
+          text-align: justify;
+          justify-content: center;
+      }
+      .container .left{
+          flex: 50%;
+      }
+      .container .left p, h1{
+          margin: 2rem;
+          width: 25rem;
+      }
+      .container .right{
+          flex: 50%;
+      }
+      #heroimg{
+          width: 25rem;
+      }
+      button{
+      border-radius: 2rem;
+      width: 6rem;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: 0.5s ease;
+      }
+      button:hover{
+          background-color: white;
+      }
+
+
+
+      .section{
+          
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          margin-top: 3rem;
+          margin-bottom: 5rem;
+          align-items: center;
+      }
+      .section h3{
+          margin-top: 5rem;
+      }
+      .section-head{
+          display: flex;
+          justify-content: center;
+          margin-bottom: 5rem;
+      }
+      .override .card{
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+          border:none;
+          /* max-width:23rem; */
+
+      }
+      .override .card-body{
+          /* background-color: #AFC3FF; */
+      }
+
+      #img{
+          width: 21rem;
+          /* height: 2rem; */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-left: 2rem;
+          margin-right: 2rem;
+      }
+      #override .navbar{
+          justify-content: center;
+      }
+      #override .head{
+          margin-top: 2rem;
+          text-align: center;
+      }
+
+
+
+
+
+      .card{
+          width: 18rem;
+          min-width: 20rem;
+      }
+      .card-header
+      {
+          text-align: center;
+      }
+      .card-body{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height:20rem;
+      }
+      .override .btn{
+          margin-top: 6px;
+      }
+      .left button a{
+          text-decoration: none;
+          color:black;
+      }
+
+      .long-card{
+          display: flex;
+          max-width: 82rem;
+          /* border: 2px solid; */
+          box-shadow: 0px 4px 12px rgb(0 0 0 / 50%);
+          margin-top: 15px;
+          padding: 1rem;
+      }
+      .long-card .right{
+          flex-direction: row-reverse;
+      }
+      .text{
+          display: flex;
+          margin-left: 6rem;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+      }
+      .a{
+          display: flex;
+          /* justify-content: center; */
+          flex-direction: column;
+          align-items: center;
+          margin: 50px;
+      }
+      @media screen and (max-width:768px) {
+          .container{
+              flex-direction: column;
+              text-align: center;
+              justify-content: center;
+              align-items: center;
+              margin-top: 1rem;
+          }
+          .container .left p, h1{
+              margin: 2rem;
+              width: 18rem;
+          }
+          .long-card{
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+          }
+          .text{
+              margin-left: 2rem;
+          }
+      }
+      @media screen and (max-width:322px){
+          #img{
+              width:19rem;
+          }
+          .long-card{
+              padding: 0;
+          }
+      }
+  </style>
+  <body id="override">
+    <div class="headbox">
+     
+        <div class="head">
+          <h2>Diseases</h2>
+        </div>
+        <div class="container">
+          <img id="heroimg" src="./diseaseImg/person-with-cold_23-2148505009.webp" alt="">
+          
+        </div>
+    </div>
+<div class="section">
+    <div class="a"><h3>DIABETES</h3>
+      <div class="long-card left">
+        <div class="card text-black mb-3" style="max-width: 20rem;">
+            <!-- <div class="card-header">Diseases</div> -->
+            <div class="card-body">
+                <img src="./diseaseImg/woman-character-with-diabetes-symptoms-headache-dizziness-fatique-weight-loss-isolated_1284-53869.webp"
+                alt="" id="img">
+                <!-- <button type="button" class="btn btn-primary">Visit</button> -->
+            </div>
+        </div>
+        <div class="text">
+          <div class="part1">
+            <p>>Diabetes mellitus, commonly known as diabetes, is a metabolic disease that causes high blood sugar. The hormone insulin moves sugar from the blood into your cells to be stored or used for energy. With diabetes, your body either doesn’t make enough insulin or can’t effectively use the insulin it does make.
+                There are two main types of diabetes: type 1 and type 2.
+                Both types of diabetes are chronic diseases that affect the way your body regulates blood sugar, or glucose. Glucose is the fuel that feeds your body’s cells, but to enter your cells it needs a key. Insulin is that key.
+                <ul>
+                    <li>People with type 1 diabetes don’t produce insulin. we can think of it as not having a key.</li>
+                    <li>People with type 2 diabetes don’t respond to insulin as well as they should and later in the disease often don’t make enough insulin. we can think of it as having a broken key</li>
+        
+                </ul>
+            </p>
+  
+          </div>
+          <div class="part2">
+            <h4>Diets</h4>
+            <p>
+                1. Green leafy vegetables like , spinach , collard greens , kale , cabbage bok choy , broccoli.
+                Green leafy vegetables are packed full of essential vitamins, minerals, and nutrients. They also have minimal impact on blood sugar levels. Leafy greens, including spinach and kale, are a key plant-based source of potassium, vitamin A, and calcium. They also provide protein and fiber. eating green leafy vegetables is helpful for people with diabetes due to their high antioxidant content and starch-digesting enzymes.<br>
+           2. Kale juice may help regulate blood sugar levels and improve blood pressure in people with subclinical hypertension. People can include green leafy vegetables in their diet in salads, side dishes, soups, and dinners. Combine them with a source of lean protein, such as chicken or tofu.<br>
+           3. Beans are an excellent food option for people with diabetes. They are source of plant-based protein, and they can satisfy the appetite while helping people reduce their carbohydrate intake. Eating beans can also help with weight loss and could help regulate a person’s blood pressure and cholesterol.<br>
+
+            </p>
+  
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    <div class="a">
+      <h3>GASTRIC</h3>
+      <div class="long-card right">
+        <div class="card text-black mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <img src="./diseaseImg/stomachache-concept-illustration_114360-6591.webp"
+                alt="" id="img">
+            </div>
+        </div>
+        <div class="text">
+          <div class="part1">
+            <p>
+                The main reasons behind gastric pain include gulping down meals at a rapid pace, intake of high amounts of aerated drinks and oily junk foods, consuming dishes with elevated levels of starch and insoluble fibres as well as imbalance in the healthy gut microbiome, which aid in digestion.
+
+                One of the most common causes of stomach pain is caused by excessive acid in the stomach. Known as gastric pain, it can vary from a mild ache to a severe, throbbing sensation in the upper stomach area. Some of its other symptoms include bloating, indigestion, feeling full again, nausea or vomiting.
+            </p>
+
+          </div>
+          <div class="part2">
+            <h4>Diets</h4>
+            <p>
+                1.Herbal teas are made with extracts from plants that have many medicinal properties. Since they are packed with strong antioxidants and anti-inflammatory compunds, herbals teas help in smooth digestion and lower pain due to gastric problems. some popular herbals teas include ginger, peppermint, and lemon tea<br>
+                2.Fennel seeds or saunf are a tried and tested remedy for gastric pain. In India, they are generally chewed post meals to improve digestion. They contain some vital plant compounds that fuel gastric secretions, enabling smooth processing of food particles and easing symptoms of indigestion and constipation.<br>
+                3.Clove is a traditional remedy for bloating, gatsric pain, flatulence, constipation etc. Chewing cloves or swallowing a teaspoon of clove powder with cardamon after meals kindle the discharge of digestive acids, thereby preventing acidity and disssipationg excessive gas from the body.
+              </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="a">
+        <h3>WHOLE BODY PAIN</h3>
+        <div class="long-card right">
+          <div class="card text-black mb-3" style="max-width: 20rem;">
+              <div class="card-body">
+                  <img src="./diseaseImg/human-body-physical-injury-round-flat-set-with-shoulder-knee-finger-burn-cut-wounds-isolated_1284-27038.webp"
+                  alt="" id="img">
+              </div>
+          </div>
+          <div class="text">
+            <div class="part1">
+              <p>
+                Aches and pains in your muscles are common and are usually caused by overuse.When you work out or do too much of a rigorous activity, your muscles may be sore for a few days.However, this type of muscle ache is limited to the muscles you used during the activity.
+                When ypu have muscles pain caused by another health condition or medication, your muscle pain won't be limited to a single muscle group. Statins and antibiotics are medications used to treat infections or conditions throught your whole body , so they may cause body aches as a side effect.<br>
+                <h3>Reasons that cause body aches:</h3>
+                <ul>
+                    <li>Fibromyalgia:- The symptoms of this disease can mimic the feeling of muscle aches.</li>
+                    <li>Autoimmune disorders:- Autoimmune disorders are caused by the body attacking itself.Conditions like lupus or thyroid problems may contribute to aching muscles.</li>
+                    <li>Flu:-Having body aches is one symptoms that sets the flu apart from a COMMON COLD.</li>
+                </ul>
+              </p>
+  
+            </div>
+            <div class="part2">
+              <h4>Diets</h4>
+              <p>
+                1.PUMPKIN SEEDS:Pepitas are a terrific source of magnesium, a mineral that may cut the number of migraines you get. It may also help prevent and treat osteoporosis. But despite what you may have heard, it doesn't seeem to stop leg cramps at night. For more magnesium, add almonds and cashews, dark green leafy vegetables...like spinach and kale, beans, and lentils to your diet.<br>
+                2.TURMERIC:The compound in the spice that gives curry its bright orange-yellow color can affect several processes in your body, including inflammation. Studies of people with rhematoid arthritis and osteoarthritis who took supplement of curcumin found they could walk better and without the side effects of taking drugs. Black pepper can help your body absorb it, so try a blend of spices, stepped with ginger and honey into a tea.<br>
+                3.MINT:Peppermint oil relieves the painful cramps, gas, and bloating that are the hallmarks of irritable bowel syndrome. Peppermint tea is a good soother for occasiopnal tummy upset. In early research, Brazilian mint tea has beeen as effective as a prescription painkiller.
+                </p>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="a">
+      <h3>HEADACHE</h3>
+      <div class="long-card right">
+        <div class="card text-black mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <img src="./diseaseImg/stress-concept-illustration_114360-2031.webp"
+                alt="" id="img">
+            </div>
+        </div>
+        <div class="text">
+          <div class="part1">
+            <p>Headaches are a very common condition that most people will experience many times during their lives. The main symptom of a headache is a pain in your head or face. This can be throbbing, constant, sharp or dull. Headaches can be treated with medication, stress management and biofeedback
+            </p>
+
+          </div>
+          <div class="part2">
+            <h4>Diets</h4>
+            <p>1.Ginger is a superfood that is effective in providing reief from several health conditions. The root can block prostaglandins and can provide relief from headache and migraine.<br>
+                2.A major cause of headache is dehydration. So, drinking water or having water-rich foods can help to soothe your condition. watermelon contains 92% of water and can be a good option to rehydrate you. It is packed with nutrients like potassium and magnesium, which works quite effectively on headache.<br>
+                3.Yoghurt:Having Calcium-rich food can also help to provide relief from your pounding headache. Calcium deficiency decreases the ability of the brain to work efficiently.Yoghurt contains a high amount of riboflavin, a part of the B vitamin complex that can be effective on headache. It is also good for your gut health.
+              </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </body>
